@@ -1,0 +1,21 @@
+#/bin/bash
+LOG=`docker logs BTC | tail -1 | grep "%" |  sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' |awk '{print $1,$2,$3,$(NF-5),$(NF-3),$(NF-1)}'`
+divider="==============================="
+divider=$divider$divider
+
+header="\n %-8s %9s\n"
+format=" %-8s %9s\n"
+
+width=16
+
+printf "$header" "BTC-USD" "BTC-ASS"
+printf "%$width.${width}s\n" "$divider"
+printf "$format" "`echo $LOG | awk '{print $3}'`"  "`echo $LOG | awk '{print $4}'`"
+
+printf "$header" "Balance" "Profit"
+printf "%$width.${width}s\n" "$divider"
+printf "$format" "`echo $LOG | awk '{print $5}'`" "`echo $LOG | awk '{print $6}'`"
+
+printf "$header" "Date" "Time"
+printf "%$width.${width}s\n" "$divider"
+printf "$format"  "`echo $LOG | awk '{print $1}'`" "`echo $LOG | awk '{print $2}'`"

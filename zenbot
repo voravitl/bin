@@ -1,0 +1,6 @@
+#docker run  -e "TZ=America/Los_Angeles" --rm  --link zenbot_mongodb_1:mongodb -it deviavir/zenbot:unstable $@
+docker run  -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb --net=zenbot_default  -v /opt/conf_gdax.BTC-USD2.js:/app/conf.js   -it voravitl/zenbot:unstable $@
+#
+#docker run  -e "TZ=America/Los_Angeles" --rm  --link zenbot_mongodb_1:mongodb -it zenbot_server $@
+#docker run  -e "TZ=America/Los_Angeles" --rm -it zenbot_server $@
+#docker run  -e "TZ=America/Los_Angeles" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf_gdax.BTC-USD2.js:/app/conf.js -it zenbot_server_2 $@

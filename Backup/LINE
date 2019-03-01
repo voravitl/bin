@@ -1,0 +1,8 @@
+BALANCE=`/root/bin/SUM`
+TOKEN="VuF3KSuL3cJuBxKgSO4gCe9lrnZFobt74g7IAr8vI48"
+if [ "`docker ps -a | grep -c BTC`" -eq "0" ] ; then
+exit 2
+else
+curl -X POST -H "Authorization: Bearer $TOKEN" -F 'message='"$BALANCE"' ' https://notify-api.line.me/api/notify
+fi
+

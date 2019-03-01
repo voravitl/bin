@@ -1,0 +1,35 @@
+#/bin/bash
+#BALANCE=`/root/bin/SUM2 2> /dev/null`
+TOKEN="VuF3KSuL3cJuBxKgSO4gCe9lrnZFobt74g7IAr8vI48"
+COIN=$1
+
+function SUM() {  ### Enter Docker NAME
+LOG=`docker logs $COIN | tail -1 | grep "%" |  sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' |awk '{print $1,$2,$3,$(NF-5),$(NF-3),$(NF-1)}'`
+divider="==============================="
+divider=$divider$divider
+
+header="\n %-8s %9s\n"
+format=" %-8s %9s\n"
+
+width=16
+
+printf "$header" "Price" "Asset"
+printf "%$width.${width}s\n" "$divider"
+printf "$format" "`echo $LOG | awk '{print $3}'`"  "`echo $LOG | awk '{print $4}'`"
+
+printf "$header" "Balance" "Profit"
+printf "%$width.${width}s\n" "$divider"
+printf "$format" "`echo $LOG | awk '{print $5}'`" "`echo $LOG | awk '{print $6}'`"
+
+printf "$header" "Date" "Time"
+printf "%$width.${width}s\n" "$divider"
+printf "$format"  "`echo $LOG | awk '{print $1}'`" "`echo $LOG | awk '{print $2}'`"
+}
+
+
+if [ "`docker container ls  | grep -wc $COIN`" -eq "0" ] ; then
+exit 2
+else
+BALANCE=`SUM`
+curl -X POST -H "Authorization: Bearer $TOKEN" -F 'message='"$BALANCE"' ' https://notify-api.line.me/api/notify
+fi

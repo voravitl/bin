@@ -1,0 +1,31 @@
+#!/bin/bash
+LOGS="/opt/logs/TRX.log.`date +%d-%b-%Y`"
+TRX trade \
+binance.TRX-BTC  \
+--deposit=0.02 \
+--buy_max_amt=0.02 \
+--min_prev_trades=1 \
+--use_prev_trades \
+--strategy=macd \
+--period=2m \
+--min_periods=52 \
+--ema_short_period=12 \
+--ema_long_period=26 \
+--signal_period=9 \
+--up_trend_threshold=0 \
+--down_trend_threshold=0 \
+--overbought_rsi_periods=24 \
+--overbought_rsi=72 \
+--poll_trades=3000 \
+--exact_buy_orders \
+--exact_sell_orders \
+--order_adjust_time=5000 \
+--sell_stop_pct=1 \
+--buy_stop_pct=1 \
+--max_sell_loss_pct=2 \
+--max_buy_loss_pct=100 \
+--profit_stop_enable_pct=4 \
+--max_slippage_pct=9 \
+--profit_stop_pct=0.2  \
+--markdown_buy_pct=0.24 \
+--markup_sell_pct=0.13 --sell_pct=100 --buy_pct=100  2>&1 | tee $LOGS

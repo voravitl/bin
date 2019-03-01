@@ -1,0 +1,33 @@
+#!/bin/bash
+LOGS="/opt/logs/ICX.log.`date +%d-%b-%Y`"
+ICX trade \
+binance.ICX-BTC \
+--deposit=0.007 \
+--buy_max_amt=0.04 \
+--min_prev_trades=1 \
+--disable_stats \
+--use_prev_trades \
+--strategy=macd \
+--period=2m \
+--min_periods=52 \
+--ema_short_period=12 \
+--ema_long_period=26 \
+--signal_period=9 \
+--up_trend_threshold=0 \
+--down_trend_threshold=0 \
+--overbought_rsi_periods=25 \
+--overbought_rsi=73 \
+--poll_trades=3000 \
+--exact_buy_orders \
+--exact_sell_orders \
+--order_adjust_time=5000 \
+--sell_stop_pct=2 \
+--buy_stop_pct=1 \
+--max_sell_loss_pct=1 \
+--max_buy_loss_pct=100 \
+--profit_stop_enable_pct=6 \
+--max_slippage_pct=25 \
+--profit_stop_pct=0.5 \
+--markdown_buy_pct=0.50 \
+--markup_sell_pct=0.34 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+#--currency_capital=0.06 --sell_pct=100 --buy_pct=100  --days=7 2>&1 | tee $LOGS

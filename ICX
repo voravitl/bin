@@ -1,0 +1,2 @@
+docker run --name ICX -p 8082:1000 -e "TZ=America/Los_Angeles" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance.js:/app/conf.js -it deviavir/zenbot:unstable1 $@
+#docker run --name BTC -e "TZ=America/Los_Angeles" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf_gdax.BTC-USD.js:/app/conf.js -it zenbot_server_2 $@

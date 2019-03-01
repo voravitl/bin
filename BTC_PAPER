@@ -1,0 +1,6 @@
+#!/bin/bash
+LOGS="/opt/logs/BTC-paper.log.`date +%d-%b-%Y`"
+zenbot trade --paper gdax.BTC-USD --strategy=stddev --max_sell_loss_pct=0 --markdown_buy_pct=0.22
+
+#zenbot trade --paper gdax.BTC-USD  --strategy=trend_ema --markdown_buy_pct=0.5 --markup_sell_pct=0.12 --min_periods=57 --neutral_rate=0.025 --oversold_rsi=8 --oversold_rsi_periods=21 --period=35s --profit_stop_enable_pct=1 --profit_stop_pct=0.1 --rsi_periods=21 --trend_ema=3 --max_sell_loss_pct=-0.06  --max_slippage_pct=3 --order_adjust_time=15000 --reset_profit --buy_stop_pct=5 --sell_stop_pct=0.3 --poll_trades=2000  2>&1 | tee $LOGS
+#BTC trade gdax.BTC-USD  --strategy=trend_ema --markdown_buy_pct=0.22 --markup_sell_pct=0.1 --min_periods=57 --neutral_rate=0.025 --oversold_rsi=8 --oversold_rsi_periods=21 --period=35s --profit_stop_enable_pct=1 --profit_stop_pct=0.1 --rsi_periods=21 --trend_ema=3 --max_sell_loss_pct=-0.26 --order_adjust_time=15000 --reset_profit --buy_stop_pct=1 --sell_stop_pct=0.3 --poll_trades=2000  --max_slippage_pct=0.1 2>&1 | tee $LOGS

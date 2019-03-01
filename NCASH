@@ -1,0 +1,4 @@
+#/bin/bash
+conf="/opt/conf-binance.js"
+docker run --name NCASH -p 8085:1000 -e "TZ=America/Los_Angeles" --rm --link zenbot_mongodb_1:mongodb -v $conf:/app/conf.js -it deviavir/zenbot:unstable $@
+#docker run --name BTC -e "TZ=America/Los_Angeles" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf_gdax.BTC-USD.js:/app/conf.js -it zenbot_server_2 $@

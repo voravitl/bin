@@ -1,0 +1,33 @@
+
+#BTC trade gdax.BTC-USD  --buy_stop_pct=1 --sell_stop_pct=0 --markup_pct=0.091649535 --min_periods=36 --neutral_rate=0 --oversold_rsi=14 --oversold_rsi_periods=25 --period=1m --profit_stop_enable_pct=1 --profit_stop_pct=0.55 --rsi_periods=25 --trend_ema=1  --max_sell_loss_pct=0.091649535 --order_adjust_time=3000 --reset_profit  2>&1 | tee /opt/zenbot/BTC.log
+
+BTC trade gdax.BTC-USD  --buy_stop_pct=1 --sell_stop_pct=0 --markup_pct=0.0847565827 --min_periods=36 --neutral_rate=0 --oversold_rsi=14 --oversold_rsi_periods=25 --period=1m --profit_stop_enable_pct=1 --profit_stop_pct=0.55 --rsi_periods=25 --trend_ema=1  --max_sell_loss_pct=0.0847565827 --order_adjust_time=3000 --reset_profit   2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --markup_pct=0.147565827 --min_periods=36 --neutral_rate=0 --oversold_rsi=14 --oversold_rsi_periods=25 --period=1m --profit_stop_enable_pct=1 --profit_stop_pct=0.55 --rsi_periods=25 --trend_ema=28  --max_sell_loss_pct=0.8 --order_adjust_time=3000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=0 --markup_pct=0.147565827 --min_periods=81 --neutral_rate=0 --oversold_rsi=16 --oversold_rsi_periods=56 --period=1m --profit_stop_enable_pct=1 --profit_stop_pct=0.55 --rsi_periods=56 --sell_stop_pct=0 --trend_ema=28  --max_sell_loss_pct=0.01 --order_adjust_time=50000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=17 --markup_pct=0.155867805 --max_sell_loss_pct=1.2  --min_periods=48 --neutral_rate=0 --oversold_rsi=8 --oversold_rsi_periods=55 --period="1m" --profit_stop_enable_pct=0 --profit_stop_pct=0.55 --rsi_periods=55 --sell_stop_pct=0  --strategy="trend_ema" --trend_ema=11 --order_adjust_time=50000 --reset_profit  2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=1 --markup_pct=0.088404488 --max_sell_loss_pct=1.25  --min_periods=74 --neutral_rate=0 --oversold_rsi=1 --oversold_rsi_periods=19 --period="1m" --profit_stop_enable_pct=1 --profit_stop_pct=0.55 --rsi_periods=19 --sell_stop_pct=0  --strategy="trend_ema" --trend_ema=5 --order_adjust_time=3000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=0 --markup_pct=0.147565827 --min_periods=81 --neutral_rate=0 --oversold_rsi=16 --oversold_rsi_periods=56 --period=1m --profit_stop_enable_pct=0 --profit_stop_pct=0.55 --rsi_periods=56 --sell_stop_pct=0 --trend_ema=11  --max_sell_loss_pct=1.25 --order_adjust_time=50000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=1 --markup_pct=0.148360201 --max_sell_loss_pct=2  --min_periods=57 --neutral_rate=0 --oversold_rsi=11 --oversold_rsi_periods=56 --period="2m" --profit_stop_enable_pct=1 --profit_stop_pct=0.55 --rsi_periods=56 --sell_stop_pct=0  --strategy="trend_ema" --trend_ema=5 --order_adjust_time=3000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=1 --markup_pct=0.25 --min_periods=81 --neutral_rate=0 --oversold_rsi=16 --oversold_rsi_periods=56 --period=1m --profit_stop_enable_pct=0 --profit_stop_pct=0.55 --rsi_periods=56 --sell_stop_pct=3 --trend_ema=5  --max_sell_loss_pct=2 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=0 --markup_pct=0.25 --min_periods=81 --neutral_rate=0 --oversold_rsi=16 --oversold_rsi_periods=56 --period=1m --profit_stop_enable_pct=0 --profit_stop_pct=0.55 --rsi_periods=56 --sell_stop_pct=0 --trend_ema=12  --max_sell_loss_pct=2 --order_adjust_time=50000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=1 --markup_pct=0.0088404488 --max_sell_loss_pct=0.1  --min_periods=74 --neutral_rate=0 --oversold_rsi=1 --oversold_rsi_periods=19 --period="1m" --profit_stop_enable_pct=0 --profit_stop_pct=0.55 --rsi_periods=19 --sell_stop_pct=0  --strategy="trend_ema" --trend_ema=1 --order_adjust_time=3000 --sell_rate=-0.006 --reset_profit  2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=1 --markup_pct=0.256698968 --max_sell_loss_pct=0.256698968  --min_periods=81 --neutral_rate=0 --oversold_rsi=16 --oversold_rsi_periods=56 --period="2m" --profit_stop_enable_pct=1 --profit_stop_pct=0.55 --rsi_periods=56 --sell_stop_pct=0  --strategy="trend_ema" --trend_ema=13 --order_adjust_time=3000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=1 --markup_pct=0 --max_sell_loss_pct=0.01  --min_periods=16 --neutral_rate=0 --oversold_rsi=26 --oversold_rsi_periods=43 --period="1m" --profit_stop_enable_pct=0 --profit_stop_pct=0.55 --rsi_periods=50 --sell_stop_pct=33  --strategy="trend_ema" --trend_ema=28 --order_adjust_time=3000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=1 --markup_pct=0.303277475404758 --max_sell_loss_pct=0.303277475404758  --min_periods=16 --neutral_rate=0 --oversold_rsi=26 --oversold_rsi_periods=43 --period="1m" --profit_stop_enable_pct=12 --profit_stop_pct=20 --rsi_periods=50 --sell_stop_pct=33  --strategy="trend_ema" --trend_ema=28 --order_adjust_time=3000 --reset_profit 2>&1 | tee /opt/zenbot/BTC.log
+
+#BTC trade gdax.BTC-USD --buy_stop_pct=0 --markup_pct=0.256698967505391 --min_periods=81 --neutral_rate=0 --oversold_rsi=16 --oversold_rsi_periods=56 --period=2m --profit_stop_enable_pct=5 --profit_stop_pct=3 --rsi_periods=56 --sell_stop_pct=0 --trend_ema=28 --days=7 --max_sell_loss_pct=5 --order_adjust_time=50000  2>&1 | tee /opt/zenbot/BTC.log
+ 
+#BTC trade  gdax.BTC-USD --profit_stop_enable_pct=0 --profit_stop_pct=0.55 --trend_ema=9 --sell_rate=-0.006 --neutral_rate=0 --markup_pct=0.030244375897348075 --max_sell_loss_pct=0.09 --oversold_rsi_periods=25 --oversold_rsi=16 --period=1m --rsi_periods=24  --min_periods=81 --buy_stop_pct=20 --sell_stop_pct=46  --order_adjust_time=3000 2>&1 | tee /opt/zenbot/BTC.log

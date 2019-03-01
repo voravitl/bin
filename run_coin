@@ -1,0 +1,1 @@
+COIN=$1;screen  -S $COIN -dm "${COIN}_RUN" ; sleep 1s ; screen -r $COIN

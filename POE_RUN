@@ -1,0 +1,36 @@
+#!/bin/bash
+LOGS="/opt/logs/POE.log.`date +%d-%b-%Y`"
+POE trade \
+binance.POE-BTC  \
+--min_prev_trades=10 \
+--use_prev_trades \
+--strategy=ta_macd_ext \
+--period=2m \
+--min_periods=52 \
+--ema_short_period=12 \
+--ema_long_period=26 \
+--signal_period=9 \
+--fast_ma_type=EMA \
+--slow_ma_type=EMA \
+--signal_ma_type=EMA \
+--default_ma_type=signal_ma_type \
+--up_trend_threshold=0 \
+--down_trend_threshold=0 \
+--overbought_rsi_periods=25 \
+--overbought_rsi=70 \
+--poll_trades=2000 \
+--order_poll_time=5000 \
+--exact_buy_orders \
+--exact_sell_orders \
+--order_adjust_time=5000 \
+--sell_stop_pct=0 \
+--buy_stop_pct=0 \
+--max_sell_loss_pct=4 \
+--max_buy_loss_pct=100 \
+--profit_stop_enable_pct=9 \
+--max_slippage_pct=25 \
+--profit_stop_pct=0.3 \
+--markdown_buy_pct=0.6 \
+--markup_sell_pct=0.6 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+#18 19--deposit=0.04 --sell_pct=100 --buy_pct=100 \
+#16 13

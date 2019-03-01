@@ -1,0 +1,45 @@
+#/bin/bash
+#BALANCE=`/root/bin/SUM2 2> /dev/null`
+TOKEN="9YOXNNLHwH4PnnzMlMnLEvMyBpT3uRt2cViqPdKIEyb"
+COIN=$1
+
+function SUM() {  ### Enter Docker NAME
+#LOG=`docker logs $COIN | grep BTC-USD | tail -1 | grep "%" | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' |awk '{print $1,$2,$3,$(NF-5),$(NF-3),$(NF-1)}'`
+DATE="`ls -1rt /opt/logs/$COIN.*|tail -1`"
+#LOG=`cat ${DATE} | grep ..:..:.. | tail -1 | grep "%" | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' |awk '{print $1,$2,$3,$(NF-8),$(NF-6),$(NF-1)}'`
+#LOG=`cat ${DATE} | grep ..:..:.. | tail -1 | grep "%" | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | awk '{for(i=1;i<=17;++i)printf $i" "}' | sed 's/%2018-11-18//g'`
+YEAR=`date +%Y`
+LOG=`cat ${DATE} | grep ..:..:.. | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | sed 's/%'$YEAR'-/\n/g' | tail -1`
+
+divider="========================================================"
+divider=$divider$divider
+
+header1="\n %s\n"
+header="\n%-13s %-8s \n"
+format="%-13s %-8s \n"
+
+width=18
+printf "$header1" "    xxxx $COIN xxxxx"
+printf "%$width.${width}s" "$divider"
+
+printf "$header" "Price" "Asset"
+printf "$format" "`echo $LOG | awk '{print $3}'`"  "`echo $LOG | awk '{print $4}'`"
+printf "%$width.${width}s" "$divider"
+
+printf "$header" "Balance" "Profit"
+printf "$format" "`echo $LOG | awk -F $COIN '{print $2}' | awk '{print $NF}'`" "`echo $LOG | awk '{print $(NF-1)}'`"
+printf "%$width.${width}s" "$divider"
+
+printf "$header" "Date" "Time"
+printf "$format" "`echo $LOG | awk '{print $1}'`" "`echo $LOG | awk '{print $2}'`"
+printf "%$width.${width}s\n" "$divider"
+}
+
+
+if [ "`docker ps -a | awk '{print $NF}'  | egrep -v "NAME|zenbot" | grep -wc $COIN`" -eq "0" ] ; then
+exit 2
+else
+BALANCE=`SUM`
+curl -X POST -H "Authorization: Bearer $TOKEN" -F 'message='"$BALANCE"' ' https://notify-api.line.me/api/notify
+#echo $BALANCE
+fi

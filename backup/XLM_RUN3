@@ -1,0 +1,23 @@
+#!/bin/bash
+LOGS="/opt/logs/XLM2.log.`date +%d-%b-%Y`"
+XLM2 trade \
+binance.XLM-BTC  \
+--min_prev_trades=10 \
+--use_prev_trades \
+--exact_buy_orders \
+--exact_sell_orders \
+--profit_stop_enable_pct=1 \
+--profit_stop_pct=1.8  \
+--strategy=trust_distrust \
+--period=2m \
+--min_periods=200 \
+--sell_threshold=2 \
+--sell_threshold_max=0 \
+--sell_min=1 \
+--buy_threshold=2 \
+--buy_threshold_max=0 \
+--greed=0 \
+--markdown_buy_pct=0.21 \
+--markup_sell_pct=0.31 \
+--sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+#18 19--deposit=0.04 --sell_pct=100 --buy_pct=100 \

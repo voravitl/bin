@@ -1,0 +1,2 @@
+docker run --name ARN -p 1001:1000 -e "TZ=America/Los_Angeles" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf_gdax.BTC-USD.js:/app/conf.js -it zenbot_server $@
+#docker run --name BTC -e "TZ=America/Los_Angeles" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf_gdax.BTC-USD.js:/app/conf.js -it zenbot_server_2 $@

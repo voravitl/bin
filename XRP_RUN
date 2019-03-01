@@ -1,0 +1,32 @@
+#!/bin/bash
+LOGS="/opt/logs/XRP.log.`date +%d-%b-%Y`"
+XRP trade \
+binance.XRP-BTC  \
+--min_prev_trades=10 \
+--use_prev_trades \
+--strategy=ta_macd \
+--period=2m \
+--min_periods=52 \
+--ema_short_period=12 \
+--ema_long_period=26 \
+--signal_period=9 \
+--up_trend_threshold=0 \
+--down_trend_threshold=0 \
+--overbought_rsi_periods=30 \
+--overbought_rsi=70 \
+--poll_trades=2000 \
+--order_poll_time=5000 \
+--exact_buy_orders \
+--exact_sell_orders \
+--order_adjust_time=5000 \
+--sell_stop_pct=0 \
+--buy_stop_pct=0 \
+--max_sell_loss_pct=2 \
+--max_buy_loss_pct=100 \
+--profit_stop_enable_pct=4 \
+--max_slippage_pct=5 \
+--profit_stop_pct=0.1 \
+--markdown_buy_pct=0.17 \
+--markup_sell_pct=0.23 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+#18 19--deposit=0.04 --sell_pct=100 --buy_pct=100 \
+# 17 12

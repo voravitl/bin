@@ -1,0 +1,2 @@
+#docker run --name BTT -p 8083:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance2.js:/app/conf.js  -it deviavir/zenbot:unstable $@
+docker run --name TBTT2  -p 8082:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance.js:/app/conf.js  -it voravitl/zenbot:unstable $@

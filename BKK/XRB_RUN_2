@@ -1,0 +1,28 @@
+#!/bin/bash
+LOGS="/opt/logs/XVG.log.`date +%d-%b-%Y`"
+XRB trade \
+binance.XRB-BTC  \
+--strategy=macd \
+--period=5m \
+--min_periods=52 \
+--ema_short_period=12 \
+--ema_long_period=26 \
+--signal_period=9 \
+--up_trend_threshold=0 \
+--down_trend_threshold=0 \
+--overbought_rsi_periods=25 \
+--overbought_rsi=78 \
+--poll_trades=3000 \
+--exact_buy_orders \
+--exact_sell_orders \
+--sell_stop_pct=0 \
+--buy_stop_pct=3 \
+--max_sell_loss_pct=1 \
+--max_buy_loss_pct=100 \
+--profit_stop_enable_pct=11 \
+--profit_stop_pct=0.5 \
+--sell_pct=100 \
+--buy_pct=100 \
+--markdown_buy_pct=0.12 \
+--markup_sell_pct=0.12 2>&1 | tee $LOGS
+#--currency_capital=0.06 --sell_pct=100 --buy_pct=100  --days=7 \

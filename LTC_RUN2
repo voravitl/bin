@@ -1,0 +1,41 @@
+#!/bin/bash
+LOGS="/opt/logs/LTC2.log.`date +%d-%b-%Y`"
+LTC2 trade \
+gdax.LTC-BTC \
+--use_prev_trades \
+--strategy=macd \
+--period=2m \
+--min_periods=52 \
+--ema_short_period=12 \
+--ema_long_period=26 \
+--signal_period=3 \
+--up_trend_threshold=0 \
+--down_trend_threshold=0 \
+--overbought_rsi_periods=27 \
+--overbought_rsi=81 \
+--poll_trades=3000 \
+--exact_buy_orders \
+--exact_sell_orders \
+--sell_stop_pct=0 \
+--buy_stop_pct=0 \
+--order_poll_time=6000 \
+--order_adjust_time=5000 \
+--max_sell_loss_pct=4 \
+--max_buy_loss_pct=100 \
+--profit_stop_enable_pct=2 \
+--profit_stop_pct=1 \
+--markdown_buy_pct=0.29 \
+--markup_sell_pct=0.29 --sell_pct=99 --buy_pct=99 2>&1 | tee $LOGS
+#--currency_capital=0.06 --sell_pct=99 --buy_pct=99  --days=7 
+#--currency_capital=0.06 --sell_pct=100 --buy_pct=100  --days=7 2>&1 | tee $LOGS
+# 34,34
+#  zsim gdax.LTC-USD --strategy=srsi_macd --period=2m --min_periods=200 --rsi_periods=21 --srsi_periods=9 --srsi_k=5 --srsi_d=3 --oversold_rsi=20 --overbought_rsi=70 --ema_short_period=12 --ema_long_period=26 --signal_period=9 --up_trend_threshold=0 --down_trend_threshold=0 --poll_trades=3000 --max_sell_loss_pct=3 --max_buy_loss_pct=3  --profit_stop_enable_pct=10  --profit_stop_pct=0.4 --days=7 --markdown_buy_pct=0.29 --markup_sell_pct=0.28  --exact_buy_orders --exact_sell_orders  
+#LTC2 trade gdax.LTC-USD  --strategy=trend_ema --markdown_buy_pct=0.29 --markup_sell_pct=0.28 --min_periods=57 --neutral_rate=0.0075 --oversold_rsi=8 --oversold_rsi_periods=21 --period=10s --profit_stop_enable_pct=3 --profit_stop_pct=0.3 --rsi_periods=21 --trend_ema=26 --max_sell_loss_pct=0.55 --max_slippage_pct=5  --buy_stop_pct=0 --sell_stop_pct=0 --poll_trades=3000 --order_poll_time=1500 --order_adjust_time=1500 --use_prev_trades 2>&1 | tee $LOGS
+#LTC2 trade gdax.LTC-USD  --strategy=trend_ema --markdown_buy_pct=0.28 --markup_sell_pct=0.29 --min_periods=57 --neutral_rate=0.007 --oversold_rsi=8 --oversold_rsi_periods=21 --period=10s --profit_stop_enable_pct=3 --profit_stop_pct=0.3 --rsi_periods=21 --trend_ema=26 --max_sell_loss_pct=0.6 --max_slippage_pct=2  --buy_stop_pct=0 --sell_stop_pct=0 --poll_trades=3000 --order_poll_time=1500 --order_adjust_time=1500 2>&1 | tee $LOGS
+
+#LTC2 trade gdax.LTC-BTC --strategy=trend_ema --markdown_buy_pct=0.25 --markup_sell_pct=0.25 --min_periods=52 --neutral_rate=0.008 --oversold_rsi=8 --oversold_rsi_periods=21 --period=10s --profit_stop_enable_pct=5 --profit_stop_pct=0.5 --rsi_periods=21 --trend_ema=26 --max_sell_loss_pct=0.15 --max_slippage_pct=5  --buy_stop_pct=0 --sell_stop_pct=0  --poll_trades=3000  --order_poll_time=1500  --order_adjust_time=1500 --reset_profit --buy_pct=99 --sell_pct=99 2>&1 | tee $LOGS
+
+#LTC2 trade gdax.LTC-BTC --strategy=trend_ema --markdown_buy_pct=0.25 --markup_sell_pct=0.25 --min_periods=52 --neutral_rate=auto --oversold_rsi=8 --oversold_rsi_periods=21 --period=8s --profit_stop_enable_pct=5 --profit_stop_pct=0.1 --rsi_periods=21 --trend_ema=26 --max_sell_loss_pct=0 --max_slippage_pct=5  --buy_stop_pct=7 --sell_stop_pct=0  --poll_trades=5000  --order_poll_time=5000  --order_adjust_time=5000 --reset_profit --buy_pct=99 --sell_pct=99 2>&1 | tee $LOGS 
+
+###### LTC-USD
+#LTC2 trade gdax.LTC-USD --strategy=trend_ema --markdown_buy_pct=0.35 --markup_sell_pct=0.35 --min_periods=57 --neutral_rate=0.025 --oversold_rsi=8 --oversold_rsi_periods=21 --period=35s --profit_stop_enable_pct=10 --profit_stop_pct=4 --rsi_periods=21 --trend_ema=5 --max_sell_loss_pct=0.3 --max_slippage_pct=5 --order_adjust_time=500 --reset_profit --buy_stop_pct=7 --sell_stop_pct=0 --poll_trades=2000 2>&1 | tee $LOGS 

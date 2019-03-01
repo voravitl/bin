@@ -1,0 +1,54 @@
+#!/bin/bash
+COIN=$1
+new_order="/tmp/new_order_$COIN.txt"
+last_order="/tmp/laster_order_$COIN.txt"
+
+LOGS="`ls -1rt /opt/logs/$COIN.* | tail -1`"
+LINE ()  {  #### $1
+BALANCE=$1
+#TOKEN="VuF3KSuL3cJuBxKgSO4gCe9lrnZFobt74g7IAr8vI48"
+TOKEN="9YOXNNLHwH4PnnzMlMnLEvMyBpT3uRt2cViqPdKIEyb"
+curl -X POST -H "Authorization: Bearer $TOKEN" -F 'message='"$BALANCE"' ' https://notify-api.line.me/api/notify
+}
+
+#cat $LOGS  | grep -A 5 "order completed" | tail -6 > $new_order
+docker logs $COIN  | grep -A 5 "order completed" | tail -6 > $new_order
+
+if [ "`diff $new_order $last_order | wc -l`" -gt "0" ] ; then
+ if [ !  -z $new_order ] ; then 
+LINE "`cat $new_order`"
+ fi
+fi
+
+rm -f $new_order
+docker logs $COIN | grep -A 5 "order completed" | tail -6 > $last_order
+
+over_singnal () {
+overbougth=`cat $LOGS  | tail -50 | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | sed 's/2019-/\n2019-/g'  | grep '++++'   | awk '{print $1,$2,$3,$4,$7}' | uniq | tail -1  `
+oversold=`cat $LOGS | tail -50  | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | sed 's/2019-/\n2019-/g'  | grep -- '----'  | awk '{print$1,$2,$3,$4,$8}' | uniq | tail -1 ` 
+overoversold_file=/tmp/overoversold_file_$COIN
+overbougth_file=/tmp/overbougth_file_$COIN
+echo "$overbougth" > $overbougth_file
+echo "$oversold" > $overoversold_file
+
+if [ "`diff $overbougth_file /tmp/overborugth_current.$COIN | wc -l`" -ne "0" ] ; then
+	if [ ! -z "$overbougth" ] ; then 
+	LINE "OVER Bought SELLLLLLLL `echo $overbougth`"
+	echo "$overbougth" > /tmp/overborugth_current.$COIN
+	fi
+else
+touch /tmp/overborugth_current.$COIN
+fi
+
+if [ "`diff $overoversold_file /tmp/oversold_current.$COIN | wc -l`" -ne "0" ] ; then
+	if [ ! -z "$oversold" ] ; then
+	LINE "OVER Sold BUYYYYYY `echo $oversold`"
+	echo "$oversold" > /tmp/oversold_current.$COIN
+	fi
+else 
+touch /tmp/oversold_current.$COIN
+fi
+
+}
+
+over_singnal

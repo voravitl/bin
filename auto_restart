@@ -1,0 +1,5 @@
+COIN_NAME=`docker ps --format '{{.Names}}' | grep -v zenbot_mongodb_1`
+for i in $COIN_NAME
+do
+/root/bin/check_trade.sh $i &
+done

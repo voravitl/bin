@@ -1,0 +1,2 @@
+docker run --name MDA -p 8081:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance.js:/app/conf.js  -it deviavir/zenbot:unstable $@
+#docker run --name MDA -p 8081:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance.js:/app/conf.js  -it voravitl/zenbot:unstable1 $@

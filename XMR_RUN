@@ -1,0 +1,2 @@
+LOGS="/opt/logs/XMR.log.`date +%d-%b-%Y`"
+XMR trade  poloniex.XMR-BTC --strategy=trend_ema --markdown_buy_pct=0.7 --markup_sell_pct=0.35 --min_periods=57 --neutral_rate=0.025 --oversold_rsi=8 --oversold_rsi_periods=21 --period=35s --profit_stop_enable_pct=10 --profit_stop_pct=4 --rsi_periods=21 --trend_ema=5 --max_sell_loss_pct=0.5 --max_slippage_pct=5 --order_adjust_time=500 --reset_profit --buy_stop_pct=7 --sell_stop_pct=0 --poll_trades=1000 --reset_profit 2>&1 | tee $LOGS

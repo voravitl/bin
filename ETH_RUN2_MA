@@ -1,0 +1,4 @@
+#!/bin/bash
+LOGS="/opt/logs/ETH2.log.`date +%d-%b-%Y`"
+
+ETH2 trade gdax.ETH-USD --manual --strategy=trend_ema --markdown_buy_pct=0.35 --markup_sell_pct=0.08 --min_periods=52 --neutral_rate=auto --oversold_rsi=8 --oversold_rsi_periods=21 --period=10s --profit_stop_enable_pct=3 --profit_stop_pct=0.1 --rsi_periods=21 --trend_ema=26 --max_sell_loss_pct=0 --max_slippage_pct=5  --buy_stop_pct=7 --sell_stop_pct=0  --poll_trades=1500  --order_poll_time=5000  --order_adjust_time=10000 --buy_pct=99 --sell_pct=99 --reset_profit  2>&1 | tee $LOGS
