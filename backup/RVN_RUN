@@ -1,8 +1,11 @@
 #!/bin/bash
-LOGS="/opt/logs/THETA.log.`date +%d-%b-%Y`"
-THETA  trade binance.THETA-BTC  \
+LOGS="/opt/logs/RVN.log.`date +%d-%b-%Y`"
+RVN trade \
+binance.RVN-BTC  \
+--min_prev_trades=10 \
+--use_prev_trades \
 --strategy=ta_macd_ext \
---period=2m \
+--period=15m \
 --min_periods=52 \
 --ema_short_period=12 \
 --ema_long_period=26 \
@@ -14,18 +17,18 @@ THETA  trade binance.THETA-BTC  \
 --up_trend_threshold=0 \
 --down_trend_threshold=0 \
 --overbought_rsi_periods=25 \
---overbought_rsi=78 \
---poll_trades=5000 \
---order_poll_time=5000 \
---order_adjust_time=5000 \
+--overbought_rsi=74 \
 --exact_buy_orders \
 --exact_sell_orders \
+--poll_trades=3000 \
+--order_poll_time=5000 \
+--order_adjust_time=5000 \
 --sell_stop_pct=0 \
 --buy_stop_pct=0 \
---max_sell_loss_pct=4 \
+--max_sell_loss_pct=25 \
 --max_buy_loss_pct=100 \
---profit_stop_enable_pct=6 \
+--profit_stop_enable_pct=0 \
 --max_slippage_pct=25 \
 --profit_stop_pct=0 \
---markdown_buy_pct=0.18 \
---markup_sell_pct=0.40 --sell_pct=100 --buy_pct=100  2>&1 | tee $LOGS
+--markdown_buy_pct=0.21 \
+--markup_sell_pct=0.95 --sell_pct=100 --buy_pct=100 --sell_pct=100 --buy_pct=100  2>&1 | tee $LOGS
