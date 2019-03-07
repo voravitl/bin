@@ -1,6 +1,6 @@
 #!/bin/bash
-LOGS="/opt/logs/RRVNN2.log.`date +%d-%b-%Y`"
-RRVNN2 trade \
+LOGS="/opt/logs/RVN.log.`date +%d-%b-%Y`"
+RVN trade \
 binance.RVN-BTC  \
 --strategy=multi \
 --period_length=3m \
@@ -10,11 +10,11 @@ binance.RVN-BTC  \
 --length=11 \
 --fish_pct_change=0 \
 --pos_length=2 \
---poll_trades=5000 \
 --src=ohlc4 \
+--poll_trades=5000 \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
 --profit_stop_enable_pct=4 \
 --markdown_buy_pct=0.31 \
 --markup_sell_pct=0.34 \
---sell_pct=100 --buy_pct=100   2>&1 | tee $LOGS
+--sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
