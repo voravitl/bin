@@ -7,6 +7,8 @@ binance.RVN-BTC  \
 --order_adjust_time=2000 \
 --order_poll_time=5000 \
 --poll_trades=2000 \
+--exact_buy_orders \
+--exact_sell_orders \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -17,6 +19,7 @@ binance.RVN-BTC  \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
 --profit_stop_enable_pct=9 \
+--profit_stop_pct=0 \
 --markdown_buy_pct=0.31 \
 --markup_sell_pct=0.34 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
