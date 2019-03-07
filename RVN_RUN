@@ -16,7 +16,7 @@ binance.RVN-BTC  \
 --src=ohlc4 \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
---profit_stop_enable_pct=4 \
+--profit_stop_enable_pct=9 \
 --markdown_buy_pct=0.31 \
 --markup_sell_pct=0.34 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
