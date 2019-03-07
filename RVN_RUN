@@ -14,7 +14,6 @@ binance.RVN-BTC  \
 --fish_pct_change=0 \
 --pos_length=2 \
 --src=ohlc4 \
---poll_trades=5000 \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
 --profit_stop_enable_pct=4 \
