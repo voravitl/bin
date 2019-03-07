@@ -4,9 +4,9 @@ RRVNN2 trade \
 binance.RVN-BTC  \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=5000 \
+--order_adjust_time=2000 \
 --order_poll_time=5000 \
---poll_trades=5000 \
+--poll_trades=2000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
