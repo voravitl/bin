@@ -5,7 +5,7 @@ binance.RVN-BTC  \
 --min_prev_trades=10 \
 --use_prev_trades \
 --strategy=ta_macd_ext \
---period=15m \
+--period=3m \
 --min_periods=52 \
 --ema_short_period=12 \
 --ema_long_period=26 \
