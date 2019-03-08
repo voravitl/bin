@@ -29,4 +29,4 @@ binance.RVN-BTC  \
 --max_slippage_pct=25 \
 --profit_stop_pct=0 \
 --markdown_buy_pct=0.31 \
---markup_sell_pct=0.61 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+--markup_sell_pct=0.85 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
