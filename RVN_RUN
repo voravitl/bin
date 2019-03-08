@@ -19,5 +19,5 @@ binance.RVN-BTC  \
 --profit_stop_enable_pct=9 \
 --profit_stop_pct=1 \
 --markdown_buy_pct=0.46 \
---markup_sell_pct=0. \
+--markup_sell_pct=0.85 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
