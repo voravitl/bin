@@ -21,7 +21,7 @@ binance.RVN-BTC  \
 --poll_trades=1000 \
 --max_sell_loss_pct=4 \
 --max_buy_loss_pct=100 \
---profit_stop_enable_pct=10 \
+--profit_stop_enable_pct=7 \
 --profit_stop_pct=1 \
 --markdown_buy_pct=0.37 \
 --markup_sell_pct=0.85 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
