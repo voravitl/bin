@@ -1,0 +1,23 @@
+#!/bin/bash
+LOGS="/opt/logs/PHX.log.`date +%d-%b-%Y`"
+PHX trade \
+binance.PHX-BTC  \
+--strategy=multi \
+--period_length=3m \
+--order_adjust_time=2000 \
+--order_poll_time=2000 \
+--poll_trades=2000 \
+--min_periods=52 \
+--overbought_rsi_periods=25 \
+--overbought_rsi=74 \
+--length=11 \
+--fish_pct_change=0 \
+--pos_length=2 \
+--src=ohlc4 \
+--momentum_size=7 \
+--max_sell_loss_pct=4 \
+--profit_stop_enable_pct=9 \
+--profit_stop_pct=1 \
+--markdown_buy_pct=0.46 \
+--markup_sell_pct=0.41 \
+--sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
