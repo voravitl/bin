@@ -1,0 +1,23 @@
+#!/bin/bash
+LOGS="/opt/logs/RRVNN2.log.`date +%d-%b-%Y`"
+RRVNN2 trade \
+binance.RVN-BTC  \
+--strategy=multi \
+--period_length=3m \
+--order_adjust_time=2000 \
+--order_poll_time=5000 \
+--poll_trades=2000 \
+--min_periods=52 \
+--overbought_rsi_periods=25 \
+--overbought_rsi=74 \
+--length=11 \
+--fish_pct_change=0 \
+--pos_length=2 \
+--src=ohlc4 \
+--momentum_size=7 \
+--max_sell_loss_pct=3 \
+--profit_stop_enable_pct=9 \
+--profit_stop_pct=1 \
+--markdown_buy_pct=0.31 \
+--markup_sell_pct=0.45 \
+--sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
