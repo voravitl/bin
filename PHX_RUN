@@ -20,6 +20,6 @@ binance.PHX-BTC  \
 --profit_stop_pct=0 \
 --exact_sell_orders \
 --exact_buy_orders \
---markdown_buy_pct=0.5 \
+--markdown_buy_pct=0 \
 --markup_sell_pct=0.5 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
