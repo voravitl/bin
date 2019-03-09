@@ -1,7 +1,7 @@
 #!/bin/bash
 LOGS="/opt/logs/ENJ.log.`date +%d-%b-%Y`"
 ENJ trade \
-binance.RVN-BTC  \
+binance.ENJ-BTC  \
 --strategy=multi \
 --period_length=2m \
 --order_adjust_time=2000 \
