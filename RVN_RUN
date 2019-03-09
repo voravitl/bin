@@ -7,7 +7,7 @@ binance.RVN-BTC  \
 --exact_sell_orders \
 --order_adjust_time=2000 \
 --order_poll_time=2000 \
---poll_trades=2000 \
+--poll_trades=1000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
