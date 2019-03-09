@@ -1,0 +1,1 @@
+docker run --name PPHXX2 -p 8086:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@

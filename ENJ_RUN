@@ -1,0 +1,25 @@
+#!/bin/bash
+LOGS="/opt/logs/ENJ.log.`date +%d-%b-%Y`"
+ENJ trade \
+binance.RVN-BTC  \
+--strategy=multi \
+--period_length=2m \
+--order_adjust_time=2000 \
+--order_poll_time=2000 \
+--poll_trades=2000 \
+--min_periods=52 \
+--overbought_rsi_periods=25 \
+--overbought_rsi=77\
+--length=10 \
+--fish_pct_change=0 \
+--pos_length=1 \
+--src=ohlc4 \
+--momentum_size=5 \
+--max_sell_loss_pct=1 \
+--exact_sell_orders \
+--exact_buy_orders \
+--profit_stop_enable_pct=0 \
+--profit_stop_pct=0 \
+--markdown_buy_pct=0.28 \
+--markup_sell_pct=0.33 \
+--sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
