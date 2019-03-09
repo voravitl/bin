@@ -16,7 +16,7 @@ binance.RVN-BTC  \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=7 \
---max_sell_loss_pct=4 \
+--max_sell_loss_pct=3 \
 --exact_sell_orders \
 --profit_stop_enable_pct=9 \
 --profit_stop_pct=1 \
