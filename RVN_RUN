@@ -4,9 +4,9 @@ RVN trade \
 binance.RVN-BTC  \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=2000 \
---order_poll_time=2000 \
---poll_trades=1000 \
+--order_adjust_time=3000 \
+--order_poll_time=5000 \
+--poll_trades=2000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -20,6 +20,6 @@ binance.RVN-BTC  \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
---markdown_buy_pct=0.31 \
---markup_sell_pct=0.31 \
+--markdown_buy_pct=0.45 \
+--markup_sell_pct=0.41 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
