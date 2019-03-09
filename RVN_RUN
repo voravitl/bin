@@ -4,7 +4,6 @@ RVN trade \
 binance.RVN-BTC  \
 --strategy=multi \
 --period_length=3m \
---exact_sell_orders \
 --order_adjust_time=2000 \
 --order_poll_time=2000 \
 --poll_trades=1000 \
@@ -17,11 +16,10 @@ binance.RVN-BTC  \
 --src=ohlc4 \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
---exact_sell_orders \
 --profit_stop_enable_pct=9 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
---markdown_buy_pct=0.33 \
---markup_sell_pct=0.36 \
+--markdown_buy_pct=0.31 \
+--markup_sell_pct=0.31 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
