@@ -1,7 +1,7 @@
 #COIN_NAME=`docker ps --format '{{.Names}}' | grep -v zenbot_mongodb_1`
-COIN_NAME=`docker ps -a | awk '{print $NF}' | egrep -v "NAME|zenbot_mongodb_1"`
+COIN_NAME=`docker ps -a | awk '{print $NF}' | egrep -v "NAME|zenbot_"`
 for i in $COIN_NAME
 do
 /root/bin/LINE $i
-#/root/bin/check_trade.sh $i
+/root/bin/check_trade.sh $i
 done
