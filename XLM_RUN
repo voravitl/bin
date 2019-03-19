@@ -21,6 +21,6 @@ binance.XLM-BTC  \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.48 \
---markup_sell_pct=0.50 \
+--markdown_buy_pct=0.55 \
+--markup_sell_pct=0.57 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
