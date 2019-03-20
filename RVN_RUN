@@ -4,7 +4,8 @@ RVN trade \
 binance.RVN-BTC  \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=4000 \
+--quarentine_time=9 \
+--order_adjust_time=2000 \
 --order_poll_time=5000 \
 --poll_trades=2000 \
 --min_periods=52 \
