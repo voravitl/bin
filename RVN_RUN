@@ -6,6 +6,7 @@ binance.RVN-BTC  \
 --period_length=3m \
 --quarentine_time=9 \
 --order_adjust_time=4000 \
+--poll_trades=4000 \
 --order_poll_time=5000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
@@ -16,7 +17,7 @@ binance.RVN-BTC  \
 --src=ohlc4 \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
---profit_stop_enable_pct=4 \
+--profit_stop_enable_pct=3 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
