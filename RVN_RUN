@@ -7,7 +7,6 @@ binance.RVN-BTC  \
 --quarentine_time=9 \
 --order_adjust_time=2000 \
 --order_poll_time=5000 \
---poll_trades=4000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -30,3 +29,4 @@ binance.RVN-BTC  \
 #--use_prev_trades \
 #--markdown_buy_pct=0.67 \
 #--markup_sell_pct=0.57 \
+#--poll_trades=4000 \
