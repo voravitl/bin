@@ -3,6 +3,7 @@ LOGS="/opt/logs/RVN.log.`date +%d-%b-%Y`"
 RVN trade \
 binance.RVN-BTC  \
 --strategy=multi \
+--quarentine_time=5 \
 --period_length=3m \
 --poll_trades=4000 \
 --order_adjust_time=4000 \
