@@ -16,13 +16,13 @@ binance.RVN-BTC  \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=7 \
---max_sell_loss_pct31 \
+--max_sell_loss_pct=1 \
 --profit_stop_enable_pct=3 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.16 \
+--markdown_buy_pct=0.30 \
 --markup_sell_pct=0.53 \
 --min_prev_trades=10 \
 --use_prev_trades \
