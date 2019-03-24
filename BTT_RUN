@@ -6,7 +6,6 @@ binance.BTT-BTC  \
 --use_prev_trades \
 --strategy=multi \
 --period_length=1m \
---order_type=taker \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
