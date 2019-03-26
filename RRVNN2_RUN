@@ -22,7 +22,7 @@ binance.RVN-BTC \
 --exact_sell_orders \
 --max_slippage_pct=4 \
 --markdown_buy_pct=0.23 \
---markup_sell_pct=0.23 \
+--markup_sell_pct=0.52 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 #24 54
 
