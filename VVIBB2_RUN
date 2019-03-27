@@ -18,14 +18,13 @@ binance.VIB-BTC \
 --src=ohlc4 \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
---profit_stop_enable_pct=6 \
+--profit_stop_enable_pct=2 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
 --markdown_buy_pct=0.27 \
---markup_sell_pct=0.57 \
---sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+--markup_sell_pct=0.47 2>&1 | tee $LOGS
 #24 54
 
 #--min_prev_trades=10 \
