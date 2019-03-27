@@ -11,7 +11,7 @@ binance.VIB-BTC \
 --poll_trades=1000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
---overbought_rsi=74 \
+--overbought_rsi=76 \
 --length=11 \
 --fish_pct_change=0 \
 --pos_length=2 \
