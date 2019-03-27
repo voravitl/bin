@@ -6,7 +6,7 @@ binance.VIB-BTC \
 --use_prev_trades \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=4000 \
+--order_adjust_time=1000 \
 --order_poll_time=1000 \
 --poll_trades=1000 \
 --min_periods=52 \
@@ -23,7 +23,7 @@ binance.VIB-BTC \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.5 \
+--markdown_buy_pct=0.7 \
 --markup_sell_pct=0.6 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 #24 54
