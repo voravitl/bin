@@ -2,7 +2,7 @@
 LOGS="/opt/logs/RRVNN2.log.`date +%d-%b-%Y`"
 RRVNN2 trade \
 binance.RVN-BTC \
---min_prev_trades=10 \
+--min_prev_trades=0 \
 --use_prev_trades \
 --strategy=multi \
 --period_length=3m \
@@ -24,7 +24,7 @@ binance.RVN-BTC \
 --exact_sell_orders \
 --max_slippage_pct=4 \
 --markdown_buy_pct=0.27 \
---markup_sell_pct=0.66 \
+--markup_sell_pct=0.57 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 # 27 60
 #24 54

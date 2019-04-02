@@ -13,17 +13,17 @@ binance.RVN-BTC \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
 --length=11 \
---fish_pct_change=0 \
+--fish_pct_change=0.5 \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=7 \
---max_sell_loss_pct=5 \
+--max_sell_loss_pct=6 \
 --profit_stop_enable_pct=4 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.27 \
+--markdown_buy_pct=0.20 \
 --markup_sell_pct=0.66 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 # 27 60

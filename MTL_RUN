@@ -8,23 +8,23 @@ binance.MTL-BTC \
 --period_length=3m \
 --order_adjust_time=2000 \
 --order_poll_time=1000 \
---poll_trades=3000 \
+--poll_trades=5000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
 --length=11 \
---fish_pct_change=0 \
+--fish_pct_change=0.5 \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=7 \
---max_sell_loss_pct=5 \
+--max_sell_loss_pct=25 \
 --profit_stop_enable_pct=4 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.27 \
---markup_sell_pct=0.53 \
+--markdown_buy_pct=0.1 \
+--markup_sell_pct=0.8 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 # 27 60
 #24 54
