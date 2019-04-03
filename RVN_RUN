@@ -13,7 +13,7 @@ binance.RVN-BTC \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
 --length=11 \
---fish_pct_change=0.5 \
+--fish_pct_change=0 \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=7 \
