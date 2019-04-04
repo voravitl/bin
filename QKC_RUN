@@ -8,7 +8,7 @@ binance.QKC-BTC \
 --period_length=3m \
 --order_adjust_time=5000 \
 --order_poll_time=5000 \
---poll_trades=10000 \
+--poll_trades=5000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -23,6 +23,6 @@ binance.QKC-BTC \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.40 \
+--markdown_buy_pct=0.58 \
 --markup_sell_pct=0.11 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
