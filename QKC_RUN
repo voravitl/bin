@@ -24,5 +24,5 @@ binance.QKC-BTC \
 --exact_sell_orders \
 --max_slippage_pct=4 \
 --markdown_buy_pct=0.58 \
---markup_sell_pct=0.11 \
+--markup_sell_pct=0.10 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
