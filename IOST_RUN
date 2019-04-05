@@ -1,7 +1,7 @@
 #!/bin/bash
 LOGS="/opt/logs/IOST.log.`date +%d-%b-%Y`"
 IOST trade \
-binance.IOTX-BTC \
+binance.IOST-BTC \
 --min_prev_trades=10 \
 --use_prev_trades \
 --strategy=multi \
