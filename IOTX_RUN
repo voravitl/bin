@@ -23,6 +23,6 @@ binance.IOTX-BTC \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.35 \
---markup_sell_pct=0.33 \
+--markdown_buy_pct=0.6 \
+--markup_sell_pct=0.2 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
