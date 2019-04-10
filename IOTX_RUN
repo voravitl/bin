@@ -7,8 +7,8 @@ binance.IOTX-BTC \
 --strategy=multi \
 --period_length=3m \
 --order_adjust_time=1000 \
---order_poll_time=5000 \
---poll_trades=5000 \
+--order_poll_time=2000 \
+--poll_trades=3000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -24,5 +24,5 @@ binance.IOTX-BTC \
 --exact_sell_orders \
 --max_slippage_pct=4 \
 --markdown_buy_pct=0.6 \
---markup_sell_pct=0.2 \
+--markup_sell_pct=0.3 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
