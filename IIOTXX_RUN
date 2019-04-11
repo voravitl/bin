@@ -1,13 +1,13 @@
 #!/bin/bash
-LOGS="/opt/logs/TRX.log.`date +%d-%b-%Y`"
-TRX trade \
-binance.TRX-BTC \
+LOGS="/opt/logs/IOTX.log.`date +%d-%b-%Y`"
+IOTX trade \
+binance.IOTX-BTC \
 --min_prev_trades=10 \
 --use_prev_trades \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=2000 \
---order_poll_time=1000 \
+--order_adjust_time=1000 \
+--order_poll_time=2000 \
 --poll_trades=3000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
@@ -18,20 +18,11 @@ binance.TRX-BTC \
 --src=ohlc4 \
 --momentum_size=7 \
 --max_sell_loss_pct=25 \
---profit_stop_enable_pct=8 \
---profit_stop_pct=1 \
+--profit_stop_enable_pct=4 \
+--profit_stop_pct=0 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.25 \
---markup_sell_pct=0.25 \
+--markdown_buy_pct=0.6 \
+--markup_sell_pct=0.3 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
-
-#--markdown_buy_pct=0.20 \
-#--markup_sell_pct=0.66 \
-
-#--min_prev_trades=10 \
-#--use_prev_trades \
-#--markdown_buy_pct=0.67 \
-#--markup_sell_pct=0.57 \
-#--poll_trades=4000 \
