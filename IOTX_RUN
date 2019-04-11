@@ -8,7 +8,6 @@ binance.IOTX-BTC \
 --period_length=3m \
 --order_adjust_time=1000 \
 --order_poll_time=2000 \
---poll_trades=3000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
