@@ -1,8 +1,8 @@
 #!/bin/bash
-LOGS="/opt/logs/IOST.log.`date +%d-%b-%Y`"
-IOST trade \
-binance.IOST-BTC \
---min_prev_trades=0 \
+LOGS="/opt/logs/WABI.log.`date +%d-%b-%Y`"
+WABI trade \
+binance.WABI-BTC \
+--min_prev_trades=10 \
 --use_prev_trades \
 --strategy=multi \
 --period_length=3m \
@@ -18,12 +18,20 @@ binance.IOST-BTC \
 --src=ohlc4 \
 --momentum_size=7 \
 --max_sell_loss_pct=3 \
---profit_stop_enable_pct=2 \
+--profit_stop_enable_pct=8 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.34 \
---markup_sell_pct=0.32 \
---reset_profit \
+--markdown_buy_pct=0.21 \
+--markup_sell_pct=0.35 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+
+#--markdown_buy_pct=0.20 \
+#--markup_sell_pct=0.66 \
+
+#--min_prev_trades=10 \
+#--use_prev_trades \
+#--markdown_buy_pct=0.67 \
+#--markup_sell_pct=0.57 \
+#--poll_trades=4000 \
