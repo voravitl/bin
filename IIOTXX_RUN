@@ -12,11 +12,11 @@ binance.IOTX-BTC \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
---length=11 \
+--length=8 \
 --fish_pct_change=0 \
 --pos_length=2 \
 --src=ohlc4 \
---momentum_size=7 \
+--momentum_size=9 \
 --max_sell_loss_pct=4 \
 --profit_stop_enable_pct=9 \
 --profit_stop_pct=1 \
