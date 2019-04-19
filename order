@@ -11,8 +11,8 @@ TOKEN="9YOXNNLHwH4PnnzMlMnLEvMyBpT3uRt2cViqPdKIEyb"
 curl -X POST -H "Authorization: Bearer $TOKEN" -F 'message='"$BALANCE"' ' https://notify-api.line.me/api/notify
 }
 
-#cat $LOGS  | grep -A 5 "order completed" | tail -6 > $new_order
-docker logs $COIN  | grep -A 5 "order completed" | tail -6 > $new_order
+cat $LOGS  | grep -A 5 "order completed" | tail -6 > $new_order
+#docker logs $COIN  | grep -A 5 "order completed" | tail -6 > $new_order
 
 if [ "`diff $new_order $last_order | wc -l`" -gt "0" ] ; then
  if [ !  -z $new_order ] ; then 
@@ -21,7 +21,10 @@ LINE "`cat $new_order`"
 fi
 
 rm -f $new_order
-docker logs $COIN | grep -A 5 "order completed" | tail -6 > $last_order
+cat $LOGS  | grep -A 5 "order completed" | tail -6 > $last_order
+
+#docker logs $COIN | grep -A 5 "order completed" | tail -6 > $last_order
+
 
 over_singnal () {
 overbougth=`cat $LOGS  | tail -50 | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | sed 's/2019-/\n2019-/g'  | grep '++++'   | awk '{print $1,$2,$3,$4,$7}' | uniq | tail -1  `

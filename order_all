@@ -1,5 +1,5 @@
 #COIN_NAME=`docker ps --format '{{.Names}}' | grep -v zenbot_mongodb_1`
-COIN_NAME=`docker ps -a | awk '{print $NF}' | egrep -v "NAME|zenbot_mongodb_1"`
+COIN_NAME=`docker ps -a | awk '{print $NF}' | egrep -v "NAME|zenbot_mongodb_1|zenbot_server_1"`
 for i in $COIN_NAME
 do
 /root/bin/order $i
