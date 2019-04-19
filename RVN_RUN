@@ -5,10 +5,10 @@ binance.RVN-BTC \
 --min_prev_trades=10 \
 --use_prev_trades \
 --strategy=multi \
+--strategy=multi \
 --period_length=3m \
---order_adjust_time=7000 \
---order_poll_time=6000 \
---poll_trades=5000 \
+--order_adjust_time=1000 \
+--order_poll_time=7000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -17,8 +17,8 @@ binance.RVN-BTC \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=7 \
---max_sell_loss_pct=3 \
---profit_stop_enable_pct=0 \
+--max_sell_loss_pct=2 \
+--profit_stop_enable_pct=6 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
