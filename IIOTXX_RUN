@@ -17,7 +17,7 @@ binance.IOTX-BTC \
 --src=ohlc4 \
 --momentum_size=9 \
 --max_sell_loss_pct=6 \
---profit_stop_enable_pct=2 \
+--profit_stop_enable_pct=3 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
