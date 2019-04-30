@@ -1,28 +1,29 @@
 #!/bin/bash
-LOGS="/opt/logs/IOST.log.`date +%d-%b-%Y`"
-IOST trade \
-binance.IOST-BTC \
---min_prev_trades=10 \
+COIN=IOST
+LOGS="/opt/logs/$COIN.log.`date +%d-%b-%Y`"
+$COIN trade \
+binance.$COIN-BTC \
+--min_prev_trades=1 \
 --use_prev_trades \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=6000 \
---order_poll_time=6000 \
---poll_trades=6000 \
+--order_adjust_time=18000  \
+--order_poll_time=18000  \
+--poll_trades=5000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
---length=11 \
+--length=8 \
 --fish_pct_change=0 \
 --pos_length=2 \
 --src=ohlc4 \
---momentum_size=7 \
---max_sell_loss_pct=3 \
---profit_stop_enable_pct=2 \
+--momentum_size=9 \
+--max_sell_loss_pct=6 \
+--profit_stop_enable_pct=3 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.34 \
---markup_sell_pct=0.32 \
+--markdown_buy_pct=0.45 \
+--markup_sell_pct=0.40 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
