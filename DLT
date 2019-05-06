@@ -1,2 +1,1 @@
-#docker run --name ADA -p 8083:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance2.js:/app/conf.js  -it deviavir/zenbot:unstable $@
-docker run --name DNT -p 8083:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance2.js:/app/conf.js  -it voravitl/zenbot:unstable $@
+docker run --name DLT  -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@

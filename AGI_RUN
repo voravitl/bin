@@ -17,14 +17,14 @@ binance.AGI-BTC \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=9 \
---max_sell_loss_pct=6 \
+--max_sell_loss_pct=4 \
 --profit_stop_enable_pct=3 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.45 \
---markup_sell_pct=0.40 \
+--markdown_buy_pct=0.35 \
+--markup_sell_pct=0.30 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 #--poll_trades=11000 \
 # order_adjust_time=14000 
