@@ -5,6 +5,7 @@ binance.RVN-BTC \
 --min_prev_trades=10 \
 --use_prev_trades \
 --period_length=3m \
+--strategy=multi \
 --order_adjust_time=25000 \
 --order_poll_time=25000 \
 --poll_trades=1000 \
