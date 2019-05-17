@@ -2,8 +2,6 @@
 LOGS="/opt/logs/MATIC.log.`date +%d-%b-%Y`"
 MATIC trade \
 binance.MATIC-BTC \
---min_prev_trades=1 \
---use_prev_trades \
 --strategy=multi \
 --period_length=3m \
 --order_adjust_time=6000  \
@@ -25,6 +23,8 @@ binance.MATIC-BTC \
 --markdown_buy_pct=0.70 \
 --markup_sell_pct=0.66 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
+#--min_prev_trades=1 \
+#--use_prev_trades \
 #--poll_trades=11000 \
 # order_adjust_time=14000 
 
