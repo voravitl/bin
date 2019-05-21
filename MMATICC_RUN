@@ -1,7 +1,7 @@
 #!/bin/bash
-LOGS="/opt/logs/CELR.log.`date +%d-%b-%Y`"
-CELR trade \
-binance.CELR-BTC \
+LOGS="/opt/logs/MMATICC.log.`date +%d-%b-%Y`"
+MMATICC trade \
+binance.MATIC-BTC \
 --strategy=multi \
 --period_length=3m \
 --order_adjust_time=6000  \
@@ -14,12 +14,12 @@ binance.CELR-BTC \
 --pos_length=2 \
 --src=ohlc4 \
 --momentum_size=9 \
---max_sell_loss_pct=6 \
+--max_sell_loss_pct=5 \
 --profit_stop_enable_pct=6 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
 --markdown_buy_pct=0.70 \
---markup_sell_pct=0.82 \
+--markup_sell_pct=0.71 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
