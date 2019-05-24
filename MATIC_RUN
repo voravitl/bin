@@ -4,8 +4,8 @@ MATIC trade \
 binance.MATIC-BTC \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=6000  \
---order_poll_time=6000  \
+--order_adjust_time=17000  \
+--order_poll_time=17000  \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -20,13 +20,10 @@ binance.MATIC-BTC \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.74 \
---markup_sell_pct=0.77 \
+--markdown_buy_pct=0.81 \
+--markup_sell_pct=0.81 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
-#--min_prev_trades=1 \
-#--use_prev_trades \
-#--poll_trades=11000 \
-# order_adjust_time=14000 
-
-#--order_adjust_time=16000  \
-#--order_poll_time=16000  \
+#--markdown_buy_pct=0.74 \
+#--markup_sell_pct=0.77 \
+#--order_adjust_time=6000  \
+#--order_poll_time=6000  \
