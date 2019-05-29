@@ -4,8 +4,8 @@ MMATICC trade \
 binance.MATIC-BTC \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=6000  \
---order_poll_time=6000  \
+--order_adjust_time=17000  \
+--order_poll_time=17000  \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -15,13 +15,14 @@ binance.MATIC-BTC \
 --src=ohlc4 \
 --momentum_size=9 \
 --max_sell_loss_pct=25 \
+--max_buy_loss_pct=99 \
 --profit_stop_enable_pct=4 \
 --profit_stop_pct=1 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.74 \
---markup_sell_pct=0.77 \
+--markdown_buy_pct=0.73 \
+--markup_sell_pct=0.89 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 #--min_prev_trades=1 \
 #--use_prev_trades \
