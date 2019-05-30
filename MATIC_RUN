@@ -21,8 +21,8 @@ binance.MATIC-BTC \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.73 \
---markup_sell_pct=0.89 \
+--markdown_buy_pct=0.96 \
+--markup_sell_pct=0.53 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 #--markdown_buy_pct=0.81 \
 #--markup_sell_pct=0.81 \
