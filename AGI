@@ -1,1 +1,0 @@
-docker run --name AGI  -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@
