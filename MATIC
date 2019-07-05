@@ -1,1 +1,1 @@
-docker run --name RVN -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-binance2.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@
+docker run --name MATIC -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /home/voravit/conf/conf-binance2.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@
