@@ -1,1 +1,2 @@
-docker run --name MATIC -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /home/voravit/conf/conf-binance2.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@
+VERSION=latest
+docker run --name MATIC -e "TZ=Asia/Bangkok" -e MONGODB_PORT_27017_TCP_ADDR=mongodb -p 9092:9092 --link zenbot_mongodb_1:mongodb -v /home/voravit/conf/conf-binance2.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:$VERSION $@

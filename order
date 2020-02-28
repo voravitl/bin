@@ -6,8 +6,7 @@ last_order="/tmp/laster_order_$COIN.txt"
 LOGS="`ls -1rt /opt/logs/$COIN.* | tail -1`"
 LINE ()  {  #### $1
 BALANCE=$1
-#TOKEN="VuF3KSuL3cJuBxKgSO4gCe9lrnZFobt74g7IAr8vI48"
-TOKEN="9YOXNNLHwH4PnnzMlMnLEvMyBpT3uRt2cViqPdKIEyb"
+TOKEN="SxWi3636MoV2lDSBQ4n8L2N79RYa9q6NlnTivy562Dh"
 curl -X POST -H "Authorization: Bearer $TOKEN" -F 'message='"$BALANCE"' ' https://notify-api.line.me/api/notify
 }
 

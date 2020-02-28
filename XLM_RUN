@@ -1,24 +1,24 @@
 #!/bin/bash
 LOGS="/opt/logs/XLM.log.`date +%d-%b-%Y`"
 XLM trade \
-gdax.xlm-BTC  \
+binance.xlm-BTC  \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=5000 \
---order_poll_time=5000 \ 
---poll_trades=5000 \ 
---min_periods=52 \ 
---overbought_rsi_periods=25 \ 
---overbought_rsi=70 \ 
+--order_adjust_time=14000 \
+--order_poll_time=14000 \
+--min_periods=52 \
+--overbought_rsi_periods=25 \
+--overbought_rsi=74 \
 --length=10 \
 --fish_pct_change=0 \
---pos_length=1 \ 
---momentum_size=5 \ 
---max_sell_loss_pct=3 \ 
---profit_stop_enable_pct=4 \ 
---profit_stop_pct=1 \ 
---exact_buy_orders \ 
---exact_sell_orders \ 
---max_slippage_pct=4 \ 
---markdown_buy_pct=0.3 \ 
---markup_sell_pct=0.3   2>&1 | tee $LOGS
+--pos_length=2 \
+--src=ohlc4 \
+--momentum_size=5 \
+--max_sell_loss_pct=5 \
+--profit_stop_enable_pct=4 \
+--profit_stop_pct=1 \
+--exact_buy_orders \                                                                                                                                                                                                                                                                     
+--exact_sell_orders \                                                                                                                                                                                                                                                                    
+--max_slippage_pct=4 \
+--markdown_buy_pct=0.36 \
+--markup_sell_pct=0.29  2>&1 | tee $LOGS

@@ -1,5 +1,6 @@
 #docker run  -e "TZ=America/Los_Angeles" --rm  --link zenbot_mongodb_1:mongodb -it deviavir/zenbot:unstable $@
-docker run  -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb --net=zenbot_default  -v /opt/conf_gdax.BTC-USD2.js:/app/conf.js   -it voravitl/zenbot:unstable $@
+#sudo docker run  -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb --net=zenbot_default  -it voravitl/zenbot:unstable $@
+sudo docker run  -e MONGODB_PORT_27017_TCP_ADDR=mongodb -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb --net=zenbot_default  -it voravitl/zenbot:latest $@
 #
 #docker run  -e "TZ=America/Los_Angeles" --rm  --link zenbot_mongodb_1:mongodb -it zenbot_server $@
 #docker run  -e "TZ=America/Los_Angeles" --rm -it zenbot_server $@

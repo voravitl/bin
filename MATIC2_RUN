@@ -1,6 +1,6 @@
 #!/bin/bash
-LOGS="/opt/logs/MATIC.log.`date +%d-%b-%Y`"
-MATIC trade \
+LOGS="/opt/logs/MATIC2.log.`date +%d-%b-%Y`"
+MATIC2 trade \
 binance.MATIC-BTC \
 --strategy=multi \
 --period_length=3m \

@@ -1,14 +1,14 @@
 #!/bin/bash
-LOGS="/opt/logs/RVN.log.`date +%d-%b-%Y`"
-RVN trade \
-binance.RVN-BTC \
+LOGS="/opt/logs/LINK.log.`date +%d-%b-%Y`"
+LINK trade \
+binance.LINK-BTC \
 --min_prev_trades=0 \
 --use_prev_trades \
 --quarentine_time=15 \
 --strategy=multi \
 --period_length=3m \
---order_adjust_time=6000 \
---order_poll_time=6000 \
+--order_adjust_time=5000 \
+--order_poll_time=5000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
@@ -24,8 +24,8 @@ binance.RVN-BTC \
 --exact_sell_orders \
 --max_buy_loss_pct=99 \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.4 \
---markup_sell_pct=0.3 \
+--markdown_buy_pct=0.2 \
+--markup_sell_pct=0.2 \
 --sell_pct=100 --buy_pct=100 2>&1 | tee $LOGS
 #--use_prev_trades \
 #--min_prev_trades=0 \

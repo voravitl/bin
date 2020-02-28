@@ -1,6 +1,19 @@
 #COIN_NAME=`docker ps --format '{{.Names}}' | grep -v zenbot_mongodb_1`
-COIN_NAME=`docker ps -a | awk '{print $NF}' | egrep -v "NAME|zenbot_mongodb_1|zenbot_server_1"`
+LINE ()  {  #### $1
+BALANCE=$1
+TOKEN="SxWi3636MoV2lDSBQ4n8L2N79RYa9q6NlnTivy562Dh"
+curl -X POST -H "Authorization: Bearer $TOKEN" -F 'message='"$BALANCE"' ' https://notify-api.line.me/api/notify
+}
+
+COIN_NAME=`docker ps -a | awk '{print $NF}' | egrep -v "NAME|zenbot_mongodb_1|zenbot_server_1|qr"`
 for i in $COIN_NAME
 do
 /root/bin/order $i
+done 
+for j in MATIC MATIC2
+do
+if [ `docker ps -a | grep $j -cw ` -eq 0 ] ; then 
+LINE "Start Coin $j"
+/root/bin/run_coin $j 
+fi
 done

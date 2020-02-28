@@ -1,6 +1,6 @@
 #/bin/bash
 #BALANCE=`/root/bin/SUM2 2> /dev/null`
-TOKEN="9YOXNNLHwH4PnnzMlMnLEvMyBpT3uRt2cViqPdKIEyb"
+TOKEN="SxWi3636MoV2lDSBQ4n8L2N79RYa9q6NlnTivy562Dh"
 COIN=$1
 
 function SUM() {  ### Enter Docker NAME
@@ -9,7 +9,7 @@ DATE="`ls -1rt /opt/logs/$COIN.*|tail -1`"
 #LOG=`cat ${DATE} | grep ..:..:.. | tail -1 | grep "%" | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' |awk '{print $1,$2,$3,$(NF-8),$(NF-6),$(NF-1)}'`
 #LOG=`cat ${DATE} | grep ..:..:.. | tail -1 | grep "%" | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | awk '{for(i=1;i<=17;++i)printf $i" "}' | sed 's/%2018-11-18//g'`
 YEAR=`date +%Y`
-LOG=`cat ${DATE} | grep ..:..:.. | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | sed 's/%'$YEAR'-/\n/g' | tail -1`
+LOG=`tail -n 100  ${DATE} | grep ..:..:.. | sed -e  's/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g' | sed 's/%'$YEAR'-/\n/g' | tail -1`
 
 divider="========================================================"
 divider=$divider$divider
@@ -25,9 +25,9 @@ printf "%$width.${width}s" "$divider"
 printf "$header" "Price" "Asset"
 printf "$format" "`echo $LOG | awk '{print $3}'`"  "`echo $LOG | awk '{print $4}'`"
 printf "%$width.${width}s" "$divider"
-
+NAME_COIN=`echo $COIN | sed 's/[0-9]*//g'`
 printf "$header" "Balance" "Profit"
-printf "$format" "`echo $LOG | awk -F $COIN '{print $2}' | awk '{print $NF}'`" "`echo $LOG | awk '{print $(NF-1)}'`"
+printf "$format" "`echo $LOG | awk -F $NAME_COIN '{print $2}' | awk '{print $NF}'`" "`echo $LOG | awk '{print $(NF-1)}'`"
 printf "%$width.${width}s" "$divider"
 
 printf "$header" "Date" "Time"

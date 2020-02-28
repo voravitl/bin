@@ -1,1 +1,1 @@
-docker run --name XLM -p 8087:8080 -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /opt/conf-gdax.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@
+docker run --name XLM -e "TZ=Asia/Bangkok" --rm --link zenbot_mongodb_1:mongodb -v /home/voravit/conf/conf-binance2.js:/app/conf.js --net=zenbot_default  -it voravitl/zenbot:unstable $@

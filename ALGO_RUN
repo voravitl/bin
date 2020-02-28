@@ -1,28 +1,28 @@
 #!/bin/bash
-LOGS="/opt/logs/BNB.log.`date +%d-%b-%Y`"
-BNB trade \
-binance.BNB-BTC  \
+LOGS="/opt/logs/ALGO.log.`date +%d-%b-%Y`"
+ALGO trade \
+binance.ALGO-BTC  \
 --min_prev_trades=0 \
 --use_prev_trades \
 --strategy=multi \
---period_length=2m \
---order_adjust_time=6000 \
---order_poll_time=6000 \
+--period_length=3m \
+--order_adjust_time=13000 \
+--order_poll_time=13000 \
+--poll_trades=13000 \
 --min_periods=52 \
 --overbought_rsi_periods=25 \
 --overbought_rsi=74 \
---length=8 \
+--length=20 \
 --fish_pct_change=0 \
 --pos_length=2 \
 --src=ohlc4 \
---momentum_size=14 \
+--momentum_size=2 \
 --max_sell_loss_pct=25 \
---max_buy_loss_pct=99 \
---profit_stop_enable_pct=1 \
---profit_stop_pct=1 \
+--profit_stop_enable_pct=9 \
+--profit_stop_pct=2 \
 --exact_buy_orders \
 --exact_sell_orders \
 --max_slippage_pct=4 \
---markdown_buy_pct=0.14 \
---markup_sell_pct=0.23 \
+--markdown_buy_pct=0.25 \
+--markup_sell_pct=0.26 \
 --sell_pct=100 --buy_pct=100  2>&1 | tee $LOGS
